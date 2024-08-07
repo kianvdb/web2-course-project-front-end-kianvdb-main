@@ -443,3 +443,55 @@ table img {
     color: #ff523b;
 }
 
+
+.inpContainer{
+    display: flex;
+    width: 90%;
+    padding: 20px;
+}
+#categoryList{
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#categoryInput {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#addCategoryBtn {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addCategoryBtn:hover {
+    background-color: #218838;
+}
+
+
+.adminNav{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+.adminNav a{
+    color: #333;
+}
+.adminNav img{
+    width: 100px;
+    border-radius: 6px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+    width: 90%;
+    max-width: 1200px;
+    /* margin: 20px auto; */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+
+
+.adminNav{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+.adminNav a{
+    color: #333;
+}
+.adminNav img{
+    width: 100px;
+    border-radius: 6px;
+}
+    </style>
+</head>
+<body>
+    <div class="adminNav" >
+        <a href="index.html"><img src="images/logoImg.png" alt=""></a>
+        <a href="manageCategory.html">Manage Categories <i class="fas fa-long-arrow-right" ></i> </a>
+    </div>
+    <div class="container">
+        <h2>Add | Update Product</h2>
+        <form id="productForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required></select>
+            </div>
+            <div class="form-group">
+                <label for="duur">Duration (min):</label>
+                <input type="number" id="duur" name="duur" required>
+            </div>
+            <div class="form-group">
+                <label for="kosten">Cost:</label>
+                <input type="number" id="kosten" name="kosten" required>
+            </div>
+            <div class="form-group">
+                <label for="moeilijkheid">Difficulty:</label>
+                <select id="moeilijkheid" name="moeilijkheid" required>
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Hardest</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inleid">Introduction:</label>
+                <textarea id="inleid" name="inleid" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ranking">Ranking:</label>
+                <input type="number" max="5" min="0" id="ranking" name="ranking" required>
+            </div>
+            <div class="form-group">
+                <label for="mainPicture">Main Picture:</label>
+                <input type="file" id="mainPicture" name="mainPicture" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="additionalPictures">Additional Pictures (4 pictures required):</label>
+                <input type="file" id="additionalPictures" name="additionalPictures" accept="image/*" multiple>
+            </div>
+            <button type="submit">Create Product</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+
+    <div class="container product-side"></div>
+
+</body>
+</html>
