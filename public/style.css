@@ -240,14 +240,206 @@ footer p{
     gap: 50px;
     
 }
+/* ========== ACCOUNT SIDE ========== */
+.accHeader{
+    margin-bottom: 0px !important;
+
+}
+
+.mainForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 30px;
+    padding-top: 100px;
+}
+
+.container_form {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-container {
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.form-btns {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-btns button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+}
+
+.form-btns::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    height: 3px;
+    background-color: var(--orange-color);
+    width: var(--underline-width, 50%);
+    left: var(--underline-left, 0);
+}
+
+.form-wrapper {
+    width: 200%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.form {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form a{
+    text-align: center !important;
+    color: #555;
+    cursor: pointer;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--orange-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background-color: #563434;
+}
 
 
 
+/* ========== FAVORITES ========== */
+
+
+#wishlist-container {
+    width: 1250px ;
+    margin-bottom: 100px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table thead {
+    width: 100% !important;
+    background-color: #FF5733;
+    color: white;
+}
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+table img {
+    width: 100px;
+    margin-right: 10px;
+}
+.remove-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.wishlist-item {
+    display: flex;
+    align-items: center;
+}
+.wishlist-item div a{
+    color:#333;
+}
+.wishlist-item div a:hover{
+    text-decoration: underline;
+}
 
 
 
+/* ========== productDetails ========== */
+
+.gere_pro{
+    width: 1250px;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+.gere_pro a{
+    text-decoration: underline;
+}
+.gere_pro .gere_pro_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.product-details {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+ 
+}
 
 
 
+.gere_pro {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
 
+}
+
+.gere_pro_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.gere_pro_top a {
+    text-decoration: none;
+    color: #ff523b;
+}
 
