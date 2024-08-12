@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alle DIY's</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <title>Alle DIY projecten</title>
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .pagination {
@@ -137,7 +137,7 @@
 
 <div class="categories_container">
     <div class="top_category">
-        <h2>Alle DIY's</h2>
+        <h2>Dieren DIY's</h2>
         <select id="categorySelect">
             <option value="all">Sorteren</option>
             <option value="moeilijkheid">Moeilijkheid</option>
@@ -153,7 +153,7 @@
     <div class="footer_div">
         <div class="left_footer">
             <h3>Download onze app</h3>
-            <p>Download app voor android and ios mobiele telefoon</p>
+            <p>Download app voor android en ios mobiele telefoon</p>
             <div>
                 <img src="images/play-store.png" alt="">
                 <img src="images/app-store.png" alt="">
@@ -192,7 +192,6 @@
     </div>
 </div>
 
-
 <script src="somejs.js" defer></script>
 <script src="app.js" defer></script>
 
@@ -213,7 +212,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             allProducts = await response.json();
-            console.log('Fetched products:', allProducts); 
+            console.log('Fetched products:', allProducts);
+            allProducts = allProducts.filter(product => product.category && product.category.categoryName === 'dieren');
             renderProducts();
             renderPagination();
         } catch (error) {
@@ -258,15 +258,14 @@ document.addEventListener("DOMContentLoaded", function() {
             const categoryName = product.category ? product.category.categoryName : 'No Category';
             return `
                 <div class="product_item" onclick="openProductDetails('${product._id}')">
-                    <img src="http://localhost:7777/${product.mainPicture}" alt="Main Picture">
+                    <img src="http://localhost:7777/${product.mainPicture}" alt="${product.name}"
                     <p>${product.name}</p>
-                    <div class="stars">${renderStars(product.ranking)}</div>
                     <p>${categoryName}</p>
+                    <p><span class="stars">${renderStars(product.ranking)}</span></p>
                 </div>
             `;
         }).join('');
     }
-
     function renderPagination() {
         paginationControls.innerHTML = `
             <button class="${currentPage === 1 ? 'disabled' : ''}" onclick="changePage(${currentPage - 1})"><i class="fa-solid fa-arrow-left"></i></button>
@@ -277,18 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     }
 
-    window.changePage = function(pageNumber) {
-        if (pageNumber < 1 || pageNumber > totalPages) return;
-        currentPage = pageNumber;
-        renderProducts();
-        renderPagination();
-    };
-
-    window.openProductDetails = function(productId) {
-        window.location.href = `productDetails.html?id=${productId}`;
-    };
-
-    categorySelect.addEventListener('change', function() {
+    categorySelect.addEventListener('change', () => {
         currentPage = 1;
         renderProducts();
         renderPagination();
@@ -296,6 +284,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     fetchProducts();
 });
+
+function openProductDetails(productId) {
+    window.location.href = `productDetails.html?id=${productId}`;
+}
 </script>
 </body>
 </html>
