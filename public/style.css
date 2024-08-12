@@ -123,13 +123,6 @@ header main img{
 .main_text a.link_btn:hover{
     background-color: #563434;
 }
-/* ==============INDEX_HTML============*/
-.top_category{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 /* =============== FOOTER =============== */
 
@@ -138,10 +131,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-top: 100px; */
     color: #fff;
     background-color: #000;
-    /* height: 300px; */
 }
 
 
@@ -233,6 +224,12 @@ footer p{
     justify-content: center;
 }
 
+/* ========== CATEGORY SIDE ========== */
+
+header.otherHeader{
+    background: #fff !important;
+}
+
 .categories_container{
     width: 1250px;
     display: flex;
@@ -240,7 +237,29 @@ footer p{
     gap: 50px;
     
 }
+
+.categories_container #frontendCategories{
+    border: 1px solid white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#frontendCategories li{
+    background-color: yellow;
+    padding: 10px;
+    width: 300px;
+    height: 250px;
+}
+
+
+
+
 /* ========== ACCOUNT SIDE ========== */
+
 .accHeader{
     margin-bottom: 0px !important;
 
@@ -293,6 +312,7 @@ footer p{
     bottom: -5px;
     height: 3px;
     background-color: var(--orange-color);
+    transition: left 0.5s ease, width 0.5s ease;
     width: var(--underline-width, 50%);
     left: var(--underline-left, 0);
 }
@@ -344,51 +364,41 @@ footer p{
 
 
 
-/* ========== FAVORITES ========== */
 
-
-#wishlist-container {
-    width: 1250px ;
-    margin-bottom: 100px;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-table thead {
-    width: 100% !important;
-    background-color: #FF5733;
-    color: white;
-}
-table th, table td {
-    padding: 10px;
-    text-align: left;
-}
-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-table img {
-    width: 100px;
-    margin-right: 10px;
-}
-.remove-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.wishlist-item {
+.account .profile{
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: var(--orange-color);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
 }
-.wishlist-item div a{
-    color:#333;
+
+.profile .logOut{
+ 
+    top: 40px;
+    position: absolute;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    button{
+        cursor: pointer;
+        padding: 4px;
+        
+    }
+    
 }
-.wishlist-item div a:hover{
-    text-decoration: underline;
-}
+
+
+
+
 
 
 
@@ -411,92 +421,10 @@ table img {
     justify-content: space-between;
     width: 100%;
 }
-.product-details {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
- 
-}
 
 
 
-.gere_pro {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-
-}
-
-.gere_pro_top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-
-}
-
-.gere_pro_top a {
-    text-decoration: none;
-    color: #ff523b;
-}
-
-
-.inpContainer{
-    display: flex;
-    width: 90%;
-    padding: 20px;
-}
-#categoryList{
-    width: 90%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-#categoryInput {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-#addCategoryBtn {
-    padding: 8px 16px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #28a745;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#addCategoryBtn:hover {
-    background-color: #218838;
-}
-
-
-.adminNav{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    justify-content: space-between;
-}
-.adminNav a{
-    color: #333;
-}
-.adminNav img{
-    width: 100px;
-    border-radius: 6px;
-}
-
-/* ===== RESPONSIVE===== */
+/* ===== RESPONSIVE SIDE ===== */
 
 
 @media screen and (width < 1260px) {
@@ -513,6 +441,11 @@ table img {
     .main_text h1{
         font-size: 40px;
         line-height: 50px;
+    }
+    .categories_container #frontendCategories{
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
     }
 
 }

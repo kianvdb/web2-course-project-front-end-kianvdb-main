@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     <span class="categoryName">${cat.categoryName}</span>
                     <input type="text" class="editCategoryInput" value="${cat.categoryName}">
                     <div>
-                    <button class="saveBtn" onclick="saveCategory('${cat._id}')">Save</button>
-                    <button class="editBtn" onclick="startEditing('${cat._id}')">Edit</button>
-                    <button class="deleteBtn" onclick="deleteCategory('${cat._id}')">Delete</button>
+                    <button class="saveBtn" onclick="saveCategory('${cat._id}')">Bewaren</button>
+                    <button class="editBtn" onclick="startEditing('${cat._id}')">Bewerken</button>
+                    <button class="deleteBtn" onclick="deleteCategory('${cat._id}')">Verwijderen</button>
                     <div>
                 </li>`
             ).join('');
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     window.deleteCategory = async function(id) {
-        if (!confirm('Are you sure you want to delete this category?')) return;
+        if (!confirm('Ben je zeker dat je deze categorie wil verwijderen?')) return;
 
         try {
             const response = await fetch(`http://localhost:7777/api/category/categories/${id}`, {
