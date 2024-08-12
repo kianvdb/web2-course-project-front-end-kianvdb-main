@@ -8,3 +8,9 @@ New feature is the possibility to sort the DIY projects.
  - information given in the web2 courses,
  - https://www.youtube.com/watch?v=yQimoqo0-7g&list=PLjwm_8O3suyM_2Lo9aAIw3HqjOPor8j9g
  - ChatGPT
+
+
+
+
+
+ (resolving hosting issue)
