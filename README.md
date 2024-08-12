@@ -11,6 +11,3 @@ New feature is the possibility to sort the DIY projects.
 
 
 
-
-
- (resolving hosting issue)
